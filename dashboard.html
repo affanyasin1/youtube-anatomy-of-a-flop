@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flop Lab — Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topnav">
+  <div class="topnav-brand"><span class="brand-mark"></span><span class="brand-name">FLOP&nbsp;LAB</span></div>
+  <nav class="topnav-tabs">
+    <a href="#status" class="topnav-tab active" data-tab="view-status">Status</a>
+    <a href="#insights" class="topnav-tab" data-tab="view-insights">Insights</a>
+    <a href="#comparison" class="topnav-tab" data-tab="view-comparison">Comparison</a>
+    <a href="#schedule" class="topnav-tab" data-tab="view-schedule">Schedule</a>
+    <a href="#channels" class="topnav-tab" data-tab="view-channels">Channels</a>
+  </nav>
+  <div class="topnav-right">
+    <span id="status-dot" class="dot"></span>
+    <span id="status-text">loading…</span>
+    <span class="clock" id="clock">--:--</span>
+  </div>
+</header>
+
+<main class="main">
+
+  <section class="view active" id="view-status">
+    <header class="pagehead">
+      <div class="eyebrow">COLLECTION STATUS</div>
+      <h1>Extraction Monitor</h1>
+    </header>
+    <div class="strip" id="strip"></div>
+    <div class="panel">
+      <div class="panel-head"><span class="num">01</span><h2>Latest run</h2></div>
+      <div class="runline" id="runline"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><span class="num">02</span><h2>Run history</h2></div>
+      <div class="channels-wrap"><table id="run-history"></table></div>
+    </div>
+  </section>
+
+  <section class="view" id="view-insights">
+    <header class="pagehead">
+      <div class="eyebrow">ANALYTICS</div>
+      <h1>Insights</h1>
+    </header>
+    <div class="bento">
+      <div class="cell cell-2"><h3>Virality split</h3><div class="chartbox"><canvas id="c-virality"></canvas></div></div>
+      <div class="cell"><h3>Videos by niche</h3><div class="chartbox"><canvas id="c-niche"></canvas></div></div>
+      <div class="cell"><h3>By subscriber band</h3><div class="chartbox"><canvas id="c-band"></canvas></div></div>
+      <div class="cell cell-2"><h3>Virality histogram</h3><div class="chartbox"><canvas id="c-viral-hist"></canvas></div></div>
+      <div class="cell cell-2"><h3>Views (log buckets)</h3><div class="chartbox"><canvas id="c-views"></canvas></div></div>
+      <div class="cell"><h3>Publish hour</h3><div class="chartbox"><canvas id="c-hour"></canvas></div></div>
+      <div class="cell"><h3>Publish day</h3><div class="chartbox"><canvas id="c-day"></canvas></div></div>
+      <div class="cell cell-2"><h3>Duration</h3><div class="chartbox"><canvas id="c-duration"></canvas></div></div>
+      <div class="cell cell-2"><h3>Title features</h3><div class="feats" id="title-feats"></div></div>
+    </div>
+  </section>
+
+  <section class="view" id="view-comparison">
+    <header class="pagehead">
+      <div class="eyebrow">FLOP VS VIRAL</div>
+      <h1>Comparison</h1>
+    </header>
+    <div class="cmp-totals" id="cmp-totals"></div>
+    <div class="bento">
+      <div class="cell cell-2"><h3>Publish hour — % of class</h3><div class="chartbox"><canvas id="c-cmp-hour"></canvas></div></div>
+      <div class="cell"><h3>Publish day — % of class</h3><div class="chartbox"><canvas id="c-cmp-day"></canvas></div></div>
+      <div class="cell cell-2"><h3>Duration — % of class</h3><div class="chartbox"><canvas id="c-cmp-duration"></canvas></div></div>
+      <div class="cell cell-2"><h3>Title length — % of class</h3><div class="chartbox"><canvas id="c-cmp-titlelen"></canvas></div></div>
+      <div class="cell"><h3>Title flags — % of class</h3><div class="chartbox"><canvas id="c-cmp-flags"></canvas></div></div>
+    </div>
+  </section>
+
+  <section class="view" id="view-schedule">
+    <header class="pagehead">
+      <div class="eyebrow">PLANNER</div>
+      <h1>Schedule Extraction</h1>
+    </header>
+    <div class="sync-bar">
+      <div>
+        <div class="sync-label">Auto extraction</div>
+        <div class="sync-sub" id="sync-sub">Syncing is on</div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="sync-toggle" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="sched-grid">
+      <form id="sched-form" class="sched-form">
+        <div class="field">
+          <label for="sched-date">Date</label>
+          <input type="date" id="sched-date">
+        </div>
+        <div class="field">
+          <label for="sched-time">Time</label>
+          <input type="time" id="sched-time">
+        </div>
+        <div class="field">
+          <label for="sched-maxvideos">Videos per channel</label>
+          <input type="number" id="sched-maxvideos" value="200" min="50" step="50">
+        </div>
+        <div class="field">
+          <label for="sched-percell">Channels per cell</label>
+          <input type="number" id="sched-percell" value="3" min="1" max="10">
+        </div>
+        <label class="check"><input type="checkbox" id="sched-reselect"> Re-discover channels</label>
+        <div class="sched-actions">
+          <button type="submit" class="btn btn-primary">Schedule</button>
+          <button type="button" class="btn" id="run-now">Run now</button>
+        </div>
+        <p class="sched-status" id="sched-status"></p>
+      </form>
+      <div class="sched-current">
+        <h3>Planned run</h3>
+        <div id="sched-current">No schedule set.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="view-channels">
+    <header class="pagehead">
+      <div class="eyebrow">CHANNELS</div>
+      <h1>Collection Targets</h1>
+    </header>
+    <div class="channels-wrap"><table id="channels"></table></div>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/dashboard.js"></script>
+</body>
+</html>
