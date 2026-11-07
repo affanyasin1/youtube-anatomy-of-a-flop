@@ -1,0 +1,15 @@
+# Local secrets (keep only the empty example)
+.env
+.env.*
+!.env.example
+
+# Generated caches and logs
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.log
+
+# Development records
+.superpowers/
+
+# data/ and .venv/ are intentionally included for this course handoff.

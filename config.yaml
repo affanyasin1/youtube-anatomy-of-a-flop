@@ -1,0 +1,24 @@
+min_subs: 100000
+min_uploads: 100
+per_cell: 3
+window_days: 90
+min_prior: 5
+max_videos: 200
+seed: 20261013
+niches:
+  tech:
+    - "tech review"
+    - "gadget"
+  cooking:
+    - "recipe"
+    - "cooking"
+  gaming:
+    - "gameplay"
+    - "let's play"
+  education:
+    - "explainer"
+    - "learn"
+bands:
+  - [100000, 500000]
+  - [500000, 2000000]
+  - [2000000, 10000000]
