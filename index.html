@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flop Lab — Research Process</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topnav">
+  <div class="topnav-brand"><span class="brand-mark"></span><span class="brand-name">FLOP&nbsp;LAB</span></div>
+  <nav class="topnav-tabs">
+    <a href="dashboard.html" class="topnav-tab active">Dashboard</a>
+  </nav>
+</header>
+
+<main class="main prose">
+  <header class="pagehead">
+    <div class="eyebrow">RESEARCH DESIGN</div>
+    <h1>Anatomy of a Flop</h1>
+  </header>
+
+  <section>
+    <h2>Research question</h2>
+    <p>Within established creators (100k+ subscribers), holding channel, production quality, budget, authority, and niche roughly constant, which metadata and topic-demand features distinguish videos that <em>flop</em> (≤0.2× the channel's prior-90-day median views) from videos that go <em>viral</em> (≥3× that median)?</p>
+  </section>
+
+  <section>
+    <h2>Design</h2>
+    <p>Each video is compared to its <em>own channel's</em> rolling median of the prior 90 days — not a global average. This within-channel natural experiment removes cross-channel confounds.</p>
+    <ul>
+      <li><strong>Outcome:</strong> <code>log10(views / prior_90d_median_views)</code>; binary flop/viral flags as secondary.</li>
+      <li><strong>Inclusion:</strong> English videos ≥ 90 days old at collection; ≥ 5 prior uploads in the window.</li>
+      <li><strong>Sampling:</strong> 4 niches × 3 subscriber bands, ~40 channels, pre-registered stratified random.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Features</h2>
+    <ul>
+      <li><strong>Baseline:</strong> title length, has number, has question, caps ratio, tag count, duration, publish hour/day, time since last upload.</li>
+      <li><strong>Topic:</strong> primary title entity (Plan 2).</li>
+      <li><strong>Topic demand:</strong> Wikipedia pageviews at publish time (Plan 2).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Analysis phases</h2>
+    <ol>
+      <li><strong>Descriptive</strong> — flop vs. viral on every feature (FDR-corrected, channel-level mixed effects).</li>
+      <li><strong>Predictive</strong> — logistic baseline vs. gradient boosting, per-channel cross-validation, SHAP.</li>
+      <li><strong>Matched pairs</strong> — within-channel flop↔viral pairs matched on topic (sensitivity).</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Deliverables</h2>
+    <p>An open metadata-only dataset (<code>data/videos.csv</code> + codebook) and a publishable paper.</p>
+  </section>
+</main>
+</body>
+</html>

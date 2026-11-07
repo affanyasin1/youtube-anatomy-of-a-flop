@@ -1,0 +1,40 @@
+{
+  "as_of": "2026-10-13T05:51:52.429481+00:00",
+  "source_hashes": {
+    "videos.csv": "0c664a2eeabbd669e0da2af3266d60fb18619ea5dec2445b44229baa018ee079",
+    "channels.csv": "6d505af2d44bf91465423e14e7fdd306c285a6a3387904a21ddf0550cbf05071",
+    "runs.csv": "0fbaea4175002e201c29e6697231608bc1f6b8131168e3dff6aed3a09a48ee9e",
+    "channel_status.csv": "25f104d4fb049754cb7f4f3004d33df2cd88c053185e24f164420992118229cf"
+  },
+  "source_rows": 3474,
+  "qualified_rows": 1165,
+  "language_status": {
+    "unknown": 1756,
+    "english": 1718
+  },
+  "qualified_channels": 12,
+  "qualified_flops": 52,
+  "qualified_virals": 181,
+  "exclusion_reasons": {
+    "language_unknown": 1414,
+    "included": 1165,
+    "age_under_90d_or_invalid_date": 448,
+    "language_unknown;age_under_90d_or_invalid_date": 222,
+    "language_unknown;invalid_baseline_or_score": 113,
+    "invalid_baseline_or_score": 101,
+    "language_unknown;age_under_90d_or_invalid_date;invalid_baseline_or_score": 7,
+    "age_under_90d_or_invalid_date;invalid_baseline_or_score": 4
+  },
+  "policy": "English-tagged only for comparison; unknown language retained for review. Age >=90 days at fixed recorded run start. Positive baseline and finite score. No historical raw records automatically recovered.",
+  "limitations": [
+    "English tags are not independent audio verification",
+    "Cumulative views have unequal exposure ages",
+    "No per-video collection timestamp; recorded run start is an approximation",
+    "Prior history truncated by collection limits",
+    "Pooled distributions are descriptive; channel and topic confounding remains",
+    "Short duration does not establish Shorts format",
+    "Original run history describes the original collection, not a new collection"
+  ],
+  "raw_files_reviewed": 7034,
+  "source_files_unchanged": true
+}

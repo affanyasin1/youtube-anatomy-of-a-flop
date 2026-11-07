@@ -1,0 +1,287 @@
+{
+  "totals": {
+    "videos": 3474,
+    "eligible": 1165,
+    "flops": 180,
+    "virals": 531,
+    "neutral": 2538,
+    "unknown": 225,
+    "median_virality": 0.994
+  },
+  "by_niche": [
+    {
+      "niche": "tech",
+      "videos": 578,
+      "flops": 18,
+      "virals": 98,
+      "median_virality": 0.954,
+      "avg_views": 180402.6
+    },
+    {
+      "niche": "cooking",
+      "videos": 993,
+      "flops": 94,
+      "virals": 197,
+      "median_virality": 1.004,
+      "avg_views": 777368.4
+    },
+    {
+      "niche": "gaming",
+      "videos": 1183,
+      "flops": 44,
+      "virals": 144,
+      "median_virality": 1.024,
+      "avg_views": 134530.6
+    },
+    {
+      "niche": "education",
+      "videos": 720,
+      "flops": 24,
+      "virals": 92,
+      "median_virality": 0.942,
+      "avg_views": 561316.5
+    }
+  ],
+  "by_band": [
+    {
+      "band": "500K\u20132M",
+      "videos": 878,
+      "flops": 55,
+      "virals": 162,
+      "median_virality": 1.018,
+      "avg_views": 412114.0
+    },
+    {
+      "band": "100K\u2013500K",
+      "videos": 1290,
+      "flops": 71,
+      "virals": 245,
+      "median_virality": 1.0,
+      "avg_views": 84015.0
+    },
+    {
+      "band": "2M\u201310M",
+      "videos": 1306,
+      "flops": 54,
+      "virals": 124,
+      "median_virality": 0.975,
+      "avg_views": 742175.7
+    }
+  ],
+  "virality_histogram": [
+    {
+      "bucket": "\u22640.2",
+      "count": 180
+    },
+    {
+      "bucket": "0.2\u20130.5",
+      "count": 493
+    },
+    {
+      "bucket": "0.5\u20131",
+      "count": 962
+    },
+    {
+      "bucket": "1\u20132",
+      "count": 823
+    },
+    {
+      "bucket": "2\u20133",
+      "count": 260
+    },
+    {
+      "bucket": "3\u20135",
+      "count": 176
+    },
+    {
+      "bucket": ">5",
+      "count": 355
+    }
+  ],
+  "view_histogram": [
+    {
+      "bucket": "<1K",
+      "count": 72
+    },
+    {
+      "bucket": "1\u201310K",
+      "count": 1117
+    },
+    {
+      "bucket": "10\u2013100K",
+      "count": 1080
+    },
+    {
+      "bucket": "100K\u20131M",
+      "count": 925
+    },
+    {
+      "bucket": "1\u201310M",
+      "count": 262
+    },
+    {
+      "bucket": ">10M",
+      "count": 18
+    }
+  ],
+  "publish_hour": [
+    {
+      "hour": 0,
+      "count": 43
+    },
+    {
+      "hour": 1,
+      "count": 76
+    },
+    {
+      "hour": 2,
+      "count": 72
+    },
+    {
+      "hour": 3,
+      "count": 83
+    },
+    {
+      "hour": 4,
+      "count": 87
+    },
+    {
+      "hour": 5,
+      "count": 94
+    },
+    {
+      "hour": 6,
+      "count": 161
+    },
+    {
+      "hour": 7,
+      "count": 100
+    },
+    {
+      "hour": 8,
+      "count": 94
+    },
+    {
+      "hour": 9,
+      "count": 183
+    },
+    {
+      "hour": 10,
+      "count": 156
+    },
+    {
+      "hour": 11,
+      "count": 296
+    },
+    {
+      "hour": 12,
+      "count": 244
+    },
+    {
+      "hour": 13,
+      "count": 204
+    },
+    {
+      "hour": 14,
+      "count": 282
+    },
+    {
+      "hour": 15,
+      "count": 403
+    },
+    {
+      "hour": 16,
+      "count": 290
+    },
+    {
+      "hour": 17,
+      "count": 123
+    },
+    {
+      "hour": 18,
+      "count": 54
+    },
+    {
+      "hour": 19,
+      "count": 77
+    },
+    {
+      "hour": 20,
+      "count": 70
+    },
+    {
+      "hour": 21,
+      "count": 67
+    },
+    {
+      "hour": 22,
+      "count": 140
+    },
+    {
+      "hour": 23,
+      "count": 75
+    }
+  ],
+  "publish_day": [
+    {
+      "day": "Mon",
+      "count": 388
+    },
+    {
+      "day": "Tue",
+      "count": 605
+    },
+    {
+      "day": "Wed",
+      "count": 453
+    },
+    {
+      "day": "Thu",
+      "count": 567
+    },
+    {
+      "day": "Fri",
+      "count": 575
+    },
+    {
+      "day": "Sat",
+      "count": 485
+    },
+    {
+      "day": "Sun",
+      "count": 401
+    }
+  ],
+  "duration_buckets": [
+    {
+      "bucket": "0\u20133 min (incl.)",
+      "count": 1134
+    },
+    {
+      "bucket": "3\u20135 min",
+      "count": 180
+    },
+    {
+      "bucket": "5\u201310 min",
+      "count": 607
+    },
+    {
+      "bucket": "10\u201320 min",
+      "count": 536
+    },
+    {
+      "bucket": "20\u201330 min",
+      "count": 410
+    },
+    {
+      "bucket": ">30 min",
+      "count": 607
+    }
+  ],
+  "title_features": {
+    "avg_title_length": 67.7,
+    "pct_has_number": 42.6,
+    "pct_has_question": 3.5,
+    "avg_caps_ratio": 0.253
+  }
+}
