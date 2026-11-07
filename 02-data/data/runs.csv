@@ -1,0 +1,2 @@
+run_id,started_at,finished_at,status,channels_attempted,channels_success,channels_failed,channels_skipped,videos_new,videos_total,quota_used
+20261013T055152Z,2026-10-13T05:51:52.429481+00:00,2026-10-13T07:05:20.373973+00:00,success,36,36,0,0,3474,3474,3546
