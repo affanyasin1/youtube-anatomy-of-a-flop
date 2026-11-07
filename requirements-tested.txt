@@ -1,0 +1,5 @@
+# Originally verified on Python 3.14.6; revalidated on macOS with Python 3.13.3 during handoff.
+requests==2.34.2
+pandas==3.0.3
+PyYAML==6.0.3
+pytest==9.0.3
